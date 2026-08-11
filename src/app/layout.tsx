@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
-import { PageLoader } from "@/components/layout/PageLoader";
-import { CustomCursor } from "@/components/layout/CustomCursor";
-import { ScrollProgress, BackToTop } from "@/components/layout/ScrollChrome";
-import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
-import { JsonLd } from "@/components/seo/JsonLd";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -63,8 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Grill Calafate | Experiencia Patagónica Premium",
-    description:
-      "Gastronomía premium y eventos exclusivos en El Calafate.",
+    description: "Gastronomía premium y eventos exclusivos en El Calafate.",
     images: ["/images/hero.jpg"],
   },
   robots: {
@@ -89,17 +81,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${display.variable} ${sans.variable}`}>
-      <body className="bg-cream font-sans antialiased">
-        <JsonLd />
-        <PageLoader />
-        <CustomCursor />
-        <ScrollProgress />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppFloat />
-        <BackToTop />
-      </body>
+      <body className="bg-cream font-sans antialiased">{children}</body>
     </html>
   );
 }
