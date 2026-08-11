@@ -30,7 +30,7 @@ export const brand = {
 export const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#restaurante", label: "Restaurante" },
-  { href: "#viajes", label: "Viajes" },
+  { href: "#agencias", label: "Agencias" },
   { href: "#eventos", label: "Eventos" },
   { href: "#shows", label: "Shows" },
   { href: "#galeria", label: "Galería" },
@@ -40,7 +40,7 @@ export const navLinks = [
 export const hero = {
   title: "Viví la verdadera experiencia Patagónica.",
   subtitle:
-    "Gastronomía premium, excursiones inolvidables y eventos exclusivos en el corazón de El Calafate.",
+    "Gastronomía premium, convenios con agencias de viajes y eventos exclusivos en El Calafate.",
   primaryCta: { label: "Reservar Mesa", href: "#contacto" },
   secondaryCta: { label: "Conocer Más", href: "#nosotros" },
   /** Reemplazar: /public/images/hero.jpg o video en /public/videos/hero.mp4 */
@@ -50,24 +50,24 @@ export const hero = {
 
 export const about = {
   eyebrow: "Sobre nosotros",
-  title: "Donde el fuego, el viaje y la celebración se encuentran.",
-  lead: "En Grill Calafate unimos parrilla patagónica, turismo de aventura y un salón para momentos únicos.",
+  title: "Donde el fuego, la hospitalidad y la celebración se encuentran.",
+  lead: "En Grill Calafate ofrecemos parrilla patagónica de alto nivel, convenios para agencias de viajes y un salón para momentos únicos.",
   blocks: [
     {
       title: "Nuestra historia",
-      text: "Nacimos en El Calafate con una visión clara: ofrecer una experiencia integral que honre la magia de la Patagonia — desde el primer corte en la parrilla hasta el horizonte de un glaciar.",
+      text: "Nacimos en El Calafate con una visión clara: honrar la magia de la Patagonia desde el primer corte en la parrilla hasta la última copa de la noche.",
       image: "/images/about-1.jpg",
       imageAlt: "Ambiente Grill Calafate — reemplazar imagen",
     },
     {
       title: "Experiencia",
-      text: "Cada detalle está pensado para el viajero exigente: sabores de autor, excursiones curadas y un salón listo para celebrar con elegancia.",
+      text: "Cada detalle está pensado para quien busca calidad: sabores de autor, atención a grupos de agencias y un salón listo para celebrar con elegancia.",
       image: "/images/about-2.jpg",
       imageAlt: "Experiencia gastronómica — reemplazar imagen",
     },
     {
       title: "Compromiso",
-      text: "Trabajamos con productores locales, guías expertos y un equipo que vive la hospitalidad como un arte. Calidad, confianza y autenticidad en cada encuentro.",
+      text: "Trabajamos con productores locales y un equipo que vive la hospitalidad como un arte. Calidad, confianza y autenticidad en cada encuentro.",
       image: "/images/about-3.jpg",
       imageAlt: "Ambiente del restaurante — reemplazar imagen",
     },
@@ -75,7 +75,7 @@ export const about = {
   stats: [
     { value: 12, suffix: "+", label: "Años de experiencia" },
     { value: 50, suffix: "k+", label: "Comensales felices" },
-    { value: 80, suffix: "+", label: "Excursiones al año" },
+    { value: 40, suffix: "+", label: "Agencias aliadas" },
     { value: 200, suffix: "+", label: "Eventos realizados" },
   ],
 };
@@ -95,45 +95,56 @@ export const restaurant = {
   ],
 };
 
-export const travel = {
-  eyebrow: "Agencia de viajes",
-  title: "La Patagonia, a tu ritmo.",
+/** Convenios con agencias de viajes (no vendemos excursiones) */
+export const agencies = {
+  eyebrow: "Para agencias de viajes",
+  title: "Traé a tus viajeros. Nosotros los recibimos.",
   description:
-    "Excursiones diseñadas para descubrir glaciares, lagos y aventura con la seguridad de quien conoce cada rincón.",
-  excursions: [
+    "Trabajamos con agencias de El Calafate y de todo el país: ustedes traen a sus clientes al restaurante y acceden a condiciones preferenciales.",
+  image: "/images/salon-eventos.jpg",
+  steps: [
     {
-      name: "Glaciar Perito Moreno",
-      description:
-        "Navegación y pasarelas frente al icónico glaciar. Una jornada de asombro puro.",
-      duration: "Día completo",
-      image: "/images/tour-perito.jpg",
-      href: "#contacto",
+      step: "01",
+      title: "Contactanos",
+      text: "Escribinos o llamanos para activar el convenio de tu agencia.",
     },
     {
-      name: "Navegación Upsala & Onelli",
-      description:
-        "Canal de los Témpanos, paredón azul y bosque de lengas. Patagonia desde el agua.",
-      duration: "8 horas",
-      image: "/images/tour-upsala.jpg",
-      href: "#contacto",
+      step: "02",
+      title: "Traé tu grupo",
+      text: "Reservá mesa para tus pasajeros: individuales, parejas o grupos.",
     },
     {
-      name: "Torres del Paine",
-      description:
-        "Cruce a Chile para contemplar una de las maravillas del sur del mundo.",
-      duration: "Día completo",
-      image: "/images/tour-paine.jpg",
-      href: "#contacto",
-    },
-    {
-      name: "Chaltén & Fitz Roy",
-      description:
-        "Senderismo en la capital del trekking argentino, con vistas al Fitz Roy.",
-      duration: "Día completo",
-      image: "/images/tour-chalten.jpg",
-      href: "#contacto",
+      step: "03",
+      title: "Disfruten el descuento",
+      text: "Tus clientes viven la experiencia Grill Calafate con beneficio especial.",
     },
   ],
+  benefits: [
+    {
+      title: "Descuentos exclusivos",
+      description:
+        "Tarifas preferenciales para pasajeros de agencias adheridas.",
+    },
+    {
+      title: "Reservas prioritarias",
+      description:
+        "Mesas aseguradas en horarios clave de almuerzo y cena.",
+    },
+    {
+      title: "Atención a grupos",
+      description:
+        "Servicio pensado para grupos turísticos, con tiempos y menús ágiles.",
+    },
+    {
+      title: "Experiencia premium",
+      description:
+        "Parrilla patagónica y ambiente de alto nivel para recomendar con confianza.",
+    },
+  ],
+  cta: {
+    label: "Quiero ser agencia aliada",
+    href: "#contacto",
+  },
 };
 
 export const events = {

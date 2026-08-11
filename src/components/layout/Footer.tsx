@@ -15,8 +15,8 @@ export function Footer() {
             Grill <span className="text-gold">Calafate</span>
           </p>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/55">
-            Restaurante, agencia de viajes y salón de eventos en el corazón de
-            la Patagonia.
+            Restaurante, convenios con agencias de viajes y salón de eventos en
+            el corazón de la Patagonia.
           </p>
           <div className="mt-6 flex gap-4">
             <a

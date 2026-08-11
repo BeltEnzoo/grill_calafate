@@ -32,12 +32,12 @@ export const metadata: Metadata = {
     template: "%s | Grill Calafate",
   },
   description:
-    "Restaurante, agencia de viajes y salón de eventos en El Calafate. Gastronomía premium, excursiones patagónicas y celebraciones exclusivas.",
+    "Restaurante, convenios con agencias de viajes y salón de eventos en El Calafate. Gastronomía premium y celebraciones exclusivas.",
   keywords: [
     "Grill Calafate",
     "restaurante El Calafate",
     "parrilla Patagonia",
-    "excursiones El Calafate",
+    "convenio agencias turismo",
     "salón de eventos",
     "cordero patagónico",
     "asado El Calafate",
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Grill Calafate",
     title: "Grill Calafate | Experiencia Patagónica Premium",
     description:
-      "Viví la verdadera experiencia Patagónica. Restaurante, viajes y eventos en El Calafate.",
+      "Viví la verdadera experiencia Patagónica. Restaurante, agencias y eventos en El Calafate.",
     images: [
       {
         url: "/images/hero.jpg",

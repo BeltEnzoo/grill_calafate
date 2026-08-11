@@ -2,7 +2,7 @@ import { getShows } from "@/lib/get-shows";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Restaurant } from "@/components/sections/Restaurant";
-import { Travel } from "@/components/sections/Travel";
+import { Agencies } from "@/components/sections/Agencies";
 import { Events } from "@/components/sections/Events";
 import { Shows } from "@/components/sections/Shows";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -18,7 +18,7 @@ export default async function HomePage() {
       <Hero />
       <About />
       <Restaurant />
-      <Travel />
+      <Agencies />
       <Events />
       <Shows events={events} source={source} />
       <Testimonials />
