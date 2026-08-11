@@ -32,11 +32,12 @@ export const metadata: Metadata = {
     template: "%s | Grill Calafate",
   },
   description:
-    "Restaurante y salón de eventos en El Calafate. Gastronomía premium y celebraciones exclusivas en la Patagonia.",
+    "Restaurante, agencia de viajes y salón de eventos en El Calafate. Gastronomía premium, excursiones patagónicas y celebraciones exclusivas.",
   keywords: [
     "Grill Calafate",
     "restaurante El Calafate",
     "parrilla Patagonia",
+    "excursiones El Calafate",
     "salón de eventos",
     "cordero patagónico",
     "asado El Calafate",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Grill Calafate",
     title: "Grill Calafate | Experiencia Patagónica Premium",
     description:
-      "Viví la verdadera experiencia Patagónica. Restaurante y eventos en El Calafate.",
+      "Viví la verdadera experiencia Patagónica. Restaurante, viajes y eventos en El Calafate.",
     images: [
       {
         url: "/images/hero.jpg",
@@ -87,14 +88,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${display.variable} ${sans.variable} h-full`}>
-      <body className="min-h-full bg-cream font-sans antialiased">
+    <html lang="es" className={`${display.variable} ${sans.variable}`}>
+      <body className="bg-cream font-sans antialiased">
         <JsonLd />
         <PageLoader />
         <CustomCursor />
         <ScrollProgress />
         <Header />
-        <main className="flex-1">{children}</main>
+        <main>{children}</main>
         <Footer />
         <WhatsAppFloat />
         <BackToTop />

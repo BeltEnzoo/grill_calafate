@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ShowStatus {
+  hoy
+  proximo
+  disponible
+  agotado
+}
+
+model Show {
+  id          String     @id @default(cuid())
+  title       String
+  date        String
+  time        String     @default("21:00")
+  image       String     @default("/images/show-1.jpg")
+  status      ShowStatus @default(disponible)
+  description String     @default("")
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  @@index([date])
+}

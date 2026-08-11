@@ -1,6 +1,8 @@
+import { getShows } from "@/lib/get-shows";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Restaurant } from "@/components/sections/Restaurant";
+import { Travel } from "@/components/sections/Travel";
 import { Events } from "@/components/sections/Events";
 import { Shows } from "@/components/sections/Shows";
 import { Testimonials } from "@/components/sections/Testimonials";
@@ -8,14 +10,17 @@ import { Gallery } from "@/components/sections/Gallery";
 import { InstagramSection } from "@/components/sections/Instagram";
 import { Contact } from "@/components/sections/Contact";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { events, source } = await getShows();
+
   return (
     <>
       <Hero />
       <About />
       <Restaurant />
+      <Travel />
       <Events />
-      <Shows />
+      <Shows events={events} source={source} />
       <Testimonials />
       <Gallery />
       <InstagramSection />

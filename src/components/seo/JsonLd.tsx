@@ -28,7 +28,7 @@ export function JsonLd() {
     "@type": "LocalBusiness",
     name: brand.name,
     description:
-      "Restaurante y salón de eventos en El Calafate, Patagonia Argentina.",
+      "Restaurante, agencia de viajes y salón de eventos en El Calafate, Patagonia Argentina.",
     url: "https://grillcalafate.com",
     telephone: brand.phone,
     email: brand.email,

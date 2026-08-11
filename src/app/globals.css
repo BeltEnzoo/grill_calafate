@@ -25,17 +25,31 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-html.custom-cursor,
-html.custom-cursor * {
-  cursor: none !important;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100%;
 }
 
 body {
   background: var(--cream);
   color: var(--charcoal);
   font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100%;
+  height: auto;
+}
+
+/* Menú móvil abierto */
+html.nav-open,
+body.nav-open {
+  overflow: hidden;
+}
+
+html.custom-cursor,
+html.custom-cursor * {
+  cursor: none !important;
 }
 
 .font-display {

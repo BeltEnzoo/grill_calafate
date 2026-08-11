@@ -19,17 +19,39 @@ npm run dev
 
 Abrí [http://localhost:3000](http://localhost:3000).
 
+## Admin de shows (Neon + panel)
+
+1. Creá un proyecto en [Neon](https://neon.tech) y copiá la connection string.
+2. Creá `web/.env.local`:
+
+```
+DATABASE_URL="postgresql://...@.../neondb?sslmode=require"
+ADMIN_PASSWORD="tu-clave-segura"
+ADMIN_SECRET="otra-cadena-random-larga"
+```
+
+3. En la carpeta `web`:
+
+```
+npx prisma db push
+npm run db:seed
+npm.cmd run dev
+```
+
+4. Entrá a **http://localhost:3000/admin** con la contraseña.
+
+5. En Vercel: Settings → Environment Variables → las 3 keys → Redeploy.
+
+Sin `DATABASE_URL`, la web usa `shows.json` y el admin avisa que falta Neon.
+
+## Calendario de shows (Google Sheets) — opcional
+
+Solo si no usás Neon. Ver `.env.example`.
+
 ## Contenido editable
 
-Todo el copy, CTAs, shows y rutas de imágenes viven en:
-
-`src/content/site.ts`
-
-## Imágenes
-
-Colocá las fotos finales del cliente en `public/images/` respetando los nombres del content file (o actualizá las rutas).
-
-Las imágenes actuales fueron extraídas del Manual de Identidad como base visual provisional.
+- Textos generales: `src/content/site.ts`
+- Shows (respaldo): `src/content/shows.json`
 
 ## Paleta (Manual de Marca)
 

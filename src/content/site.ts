@@ -30,6 +30,7 @@ export const brand = {
 export const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
   { href: "#restaurante", label: "Restaurante" },
+  { href: "#viajes", label: "Viajes" },
   { href: "#eventos", label: "Eventos" },
   { href: "#shows", label: "Shows" },
   { href: "#galeria", label: "Galería" },
@@ -39,7 +40,7 @@ export const navLinks = [
 export const hero = {
   title: "Viví la verdadera experiencia Patagónica.",
   subtitle:
-    "Gastronomía premium y eventos exclusivos en el corazón de El Calafate.",
+    "Gastronomía premium, excursiones inolvidables y eventos exclusivos en el corazón de El Calafate.",
   primaryCta: { label: "Reservar Mesa", href: "#contacto" },
   secondaryCta: { label: "Conocer Más", href: "#nosotros" },
   /** Reemplazar: /public/images/hero.jpg o video en /public/videos/hero.mp4 */
@@ -49,24 +50,24 @@ export const hero = {
 
 export const about = {
   eyebrow: "Sobre nosotros",
-  title: "Donde el fuego y la hospitalidad se encuentran.",
-  lead: "En Grill Calafate ofrecemos parrilla patagónica de alto nivel y un salón listo para celebrar momentos únicos.",
+  title: "Donde el fuego, el viaje y la celebración se encuentran.",
+  lead: "En Grill Calafate unimos parrilla patagónica, turismo de aventura y un salón para momentos únicos.",
   blocks: [
     {
       title: "Nuestra historia",
-      text: "Nacimos en El Calafate con una visión clara: honrar la magia de la Patagonia desde el primer corte en la parrilla hasta la última copa de la noche.",
+      text: "Nacimos en El Calafate con una visión clara: ofrecer una experiencia integral que honre la magia de la Patagonia — desde el primer corte en la parrilla hasta el horizonte de un glaciar.",
       image: "/images/about-1.jpg",
       imageAlt: "Ambiente Grill Calafate — reemplazar imagen",
     },
     {
       title: "Experiencia",
-      text: "Cada detalle está pensado para quien busca calidad: sabores de autor, un salón elegante y un servicio que convierte cada visita en un recuerdo.",
+      text: "Cada detalle está pensado para el viajero exigente: sabores de autor, excursiones curadas y un salón listo para celebrar con elegancia.",
       image: "/images/about-2.jpg",
       imageAlt: "Experiencia gastronómica — reemplazar imagen",
     },
     {
       title: "Compromiso",
-      text: "Trabajamos con productores locales y un equipo que vive la hospitalidad como un arte. Calidad, confianza y autenticidad en cada encuentro.",
+      text: "Trabajamos con productores locales, guías expertos y un equipo que vive la hospitalidad como un arte. Calidad, confianza y autenticidad en cada encuentro.",
       image: "/images/about-3.jpg",
       imageAlt: "Ambiente del restaurante — reemplazar imagen",
     },
@@ -74,7 +75,7 @@ export const about = {
   stats: [
     { value: 12, suffix: "+", label: "Años de experiencia" },
     { value: 50, suffix: "k+", label: "Comensales felices" },
-    { value: 120, suffix: "+", label: "Platos signature" },
+    { value: 80, suffix: "+", label: "Excursiones al año" },
     { value: 200, suffix: "+", label: "Eventos realizados" },
   ],
 };
@@ -91,6 +92,47 @@ export const restaurant = {
     { name: "Pastas", image: "/images/food-pastas.jpg" },
     { name: "Postres", image: "/images/food-postres.jpg" },
     { name: "Vinos", image: "/images/food-vinos.jpg" },
+  ],
+};
+
+export const travel = {
+  eyebrow: "Agencia de viajes",
+  title: "La Patagonia, a tu ritmo.",
+  description:
+    "Excursiones diseñadas para descubrir glaciares, lagos y aventura con la seguridad de quien conoce cada rincón.",
+  excursions: [
+    {
+      name: "Glaciar Perito Moreno",
+      description:
+        "Navegación y pasarelas frente al icónico glaciar. Una jornada de asombro puro.",
+      duration: "Día completo",
+      image: "/images/tour-perito.jpg",
+      href: "#contacto",
+    },
+    {
+      name: "Navegación Upsala & Onelli",
+      description:
+        "Canal de los Témpanos, paredón azul y bosque de lengas. Patagonia desde el agua.",
+      duration: "8 horas",
+      image: "/images/tour-upsala.jpg",
+      href: "#contacto",
+    },
+    {
+      name: "Torres del Paine",
+      description:
+        "Cruce a Chile para contemplar una de las maravillas del sur del mundo.",
+      duration: "Día completo",
+      image: "/images/tour-paine.jpg",
+      href: "#contacto",
+    },
+    {
+      name: "Chaltén & Fitz Roy",
+      description:
+        "Senderismo en la capital del trekking argentino, con vistas al Fitz Roy.",
+      duration: "Día completo",
+      image: "/images/tour-chalten.jpg",
+      href: "#contacto",
+    },
   ],
 };
 
@@ -125,50 +167,20 @@ export const events = {
   cta: { label: "Consultar disponibilidad", href: "#contacto" },
 };
 
-export type ShowStatus = "hoy" | "proximo" | "agotado" | "disponible";
+export type { ShowStatus } from "@/lib/shows";
+
+/**
+ * Los shows viven en Google Sheets (si está configurado)
+ * o en `src/content/shows.json` como respaldo.
+ * Plantilla CSV: /public/templates/shows-template.csv
+ */
+export { default as showsEvents } from "./shows.json";
 
 export const shows = {
   eyebrow: "Calendario de shows",
   title: "Noches que se sienten.",
-  description: "Música en vivo, encuentros y experiencias especiales en nuestro salón.",
-  events: [
-    {
-      id: "1",
-      title: "Noche de Folklore Patagónico",
-      date: "2026-08-08",
-      time: "21:30",
-      image: "/images/show-1.jpg",
-      status: "hoy" as ShowStatus,
-      description: "Guitarras, voces y el alma del sur.",
-    },
-    {
-      id: "2",
-      title: "Jazz & Vinos",
-      date: "2026-08-15",
-      time: "21:00",
-      image: "/images/show-2.jpg",
-      status: "proximo" as ShowStatus,
-      description: "Trío en vivo con maridaje de la casa.",
-    },
-    {
-      id: "3",
-      title: "Cena Show Internacional",
-      date: "2026-08-22",
-      time: "20:30",
-      image: "/images/show-3.jpg",
-      status: "disponible" as ShowStatus,
-      description: "Menú degustación y espectáculo en vivo.",
-    },
-    {
-      id: "4",
-      title: "Tango Bajo las Estrellas",
-      date: "2026-07-20",
-      time: "22:00",
-      image: "/images/show-4.jpg",
-      status: "agotado" as ShowStatus,
-      description: "Una noche íntima de tango y emoción.",
-    },
-  ],
+  description:
+    "Música en vivo, encuentros y experiencias especiales. Explorá el mes y elegí tu noche.",
 };
 
 export const testimonials = [

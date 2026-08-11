@@ -19,11 +19,37 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    const html = document.documentElement;
+    const body = document.body;
+
+    if (open) {
+      html.classList.add("nav-open");
+      body.classList.add("nav-open");
+    } else {
+      html.classList.remove("nav-open");
+      body.classList.remove("nav-open");
+      // Forzar unlock por si quedó overflow residual
+      html.style.overflow = "";
+      body.style.overflow = "";
+    }
+
     return () => {
-      document.body.style.overflow = "";
+      html.classList.remove("nav-open");
+      body.classList.remove("nav-open");
+      html.style.overflow = "";
+      body.style.overflow = "";
     };
   }, [open]);
+
+  // Si el viewport pasa a desktop, cerrar menú y liberar scroll
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onChange = () => {
+      if (mq.matches) setOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
 
   return (
     <header

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "1",
+    "title": "Noche de Folklore Patagónico",
+    "date": "2026-08-15",
+    "time": "21:30",
+    "image": "/images/show-1.jpg",
+    "status": "proximo",
+    "description": "Guitarras, voces y el alma del sur."
+  },
+  {
+    "id": "2",
+    "title": "Jazz & Vinos",
+    "date": "2026-08-22",
+    "time": "21:00",
+    "image": "/images/show-2.jpg",
+    "status": "disponible",
+    "description": "Trío en vivo con maridaje de la casa."
+  },
+  {
+    "id": "3",
+    "title": "Cena Show Internacional",
+    "date": "2026-09-05",
+    "time": "20:30",
+    "image": "/images/show-3.jpg",
+    "status": "disponible",
+    "description": "Menú degustación y espectáculo en vivo."
+  },
+  {
+    "id": "4",
+    "title": "Tango Bajo las Estrellas",
+    "date": "2026-08-11",
+    "time": "22:00",
+    "image": "/images/show-4.jpg",
+    "status": "hoy",
+    "description": "Una noche íntima de tango y emoción."
+  },
+  {
+    "id": "5",
+    "title": "Noche de Asado & Guitarra",
+    "date": "2026-09-12",
+    "time": "21:00",
+    "image": "/images/food-carnes.jpg",
+    "status": "disponible",
+    "description": "Parrilla abierta con música en vivo."
+  },
+  {
+    "id": "6",
+    "title": "Velada Privada Agotada",
+    "date": "2026-08-28",
+    "time": "20:00",
+    "image": "/images/event-privados.jpg",
+    "status": "agotado",
+    "description": "Experiencia exclusiva — sin cupos."
+  }
+]

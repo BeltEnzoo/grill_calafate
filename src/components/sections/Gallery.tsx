@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { gallery } from "@/content/site";
@@ -11,6 +11,17 @@ import { cn } from "@/lib/utils";
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (active === null) {
+      document.body.style.overflow = "";
+      return;
+    }
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [active]);
 
   return (
     <section id="galeria" className="relative bg-charcoal py-24 md:py-32">

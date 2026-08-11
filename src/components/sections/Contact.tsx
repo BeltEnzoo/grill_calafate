@@ -22,7 +22,7 @@ export function Contact() {
         <SectionHeading
           eyebrow="Contacto"
           title="Estamos listos para recibirte."
-          description="Reservá tu mesa o planificá tu evento con nosotros."
+          description="Reservá tu mesa, consultá una excursión o planificá tu evento."
         />
 
         <div className="mt-16 grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -50,6 +50,7 @@ export function Contact() {
                   defaultValue="restaurante"
                 >
                   <option value="restaurante">Reservar mesa</option>
+                  <option value="viajes">Excursiones</option>
                   <option value="eventos">Eventos</option>
                   <option value="shows">Shows</option>
                 </select>

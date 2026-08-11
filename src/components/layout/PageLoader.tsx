@@ -15,11 +15,11 @@ export function PageLoader() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-charcoal"
+          className="pointer-events-none fixed inset-0 z-[100] flex items-center justify-center bg-charcoal"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          aria-hidden={!visible}
+          aria-hidden
         >
           <div className="text-center">
             <motion.div
