@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { normalizeImageUrl } from "@/lib/images";
 
 type Props = {
   src: string;
@@ -30,6 +31,11 @@ export function MediaImage({
   label,
 }: Props) {
   const [failed, setFailed] = useState(false);
+  const resolvedSrc = normalizeImageUrl(src);
+
+  useEffect(() => {
+    setFailed(false);
+  }, [resolvedSrc]);
 
   if (failed) {
     return (
@@ -49,7 +55,7 @@ export function MediaImage({
           <p className="mt-1 font-display text-lg text-cream/90">
             {label || alt}
           </p>
-          <p className="mt-1 truncate text-xs text-cream/40">{src}</p>
+          <p className="mt-1 truncate text-xs text-cream/40">{resolvedSrc}</p>
         </div>
       </div>
     );
@@ -58,13 +64,14 @@ export function MediaImage({
   return (
     <div className={cn("relative h-full min-h-[1px] w-full overflow-hidden", className)}>
       <Image
-        key={src}
-        src={src}
+        key={resolvedSrc}
+        src={resolvedSrc}
         alt={alt}
         fill={fill}
         sizes={sizes}
         priority={priority}
         unoptimized
+        referrerPolicy="no-referrer"
         className={cn(
           "object-cover transition-transform duration-[1.4s] ease-out",
           zoom && "group-hover:scale-105",

@@ -10,6 +10,7 @@ import {
   isAdminAuthenticated,
   verifyAdminPassword,
 } from "@/lib/auth";
+import { normalizeImageUrl } from "@/lib/images";
 
 async function requireAdmin() {
   if (!(await isAdminAuthenticated())) {
@@ -48,7 +49,9 @@ export async function createShowAction(formData: FormData) {
       title: String(formData.get("title") || "").trim(),
       date: String(formData.get("date") || "").trim(),
       time: String(formData.get("time") || "21:00").trim(),
-      image: String(formData.get("image") || "/images/show-1.jpg").trim(),
+      image: normalizeImageUrl(
+        String(formData.get("image") || "/images/show-1.jpg"),
+      ),
       status: String(formData.get("status") || "disponible") as ShowStatus,
       description: String(formData.get("description") || "").trim(),
     },
@@ -70,7 +73,9 @@ export async function updateShowAction(formData: FormData) {
       title: String(formData.get("title") || "").trim(),
       date: String(formData.get("date") || "").trim(),
       time: String(formData.get("time") || "21:00").trim(),
-      image: String(formData.get("image") || "/images/show-1.jpg").trim(),
+      image: normalizeImageUrl(
+        String(formData.get("image") || "/images/show-1.jpg"),
+      ),
       status: String(formData.get("status") || "disponible") as ShowStatus,
       description: String(formData.get("description") || "").trim(),
     },

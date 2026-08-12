@@ -39,11 +39,19 @@ export function ShowForm({ show }: Props) {
       </div>
 
       <Field
-        label="Imagen (ruta o URL)"
+        label="Imagen (URL)"
         name="image"
         defaultValue={show?.image || "/images/show-1.jpg"}
-        placeholder="/images/show-1.jpg"
+        placeholder="https://... o /images/show-1.jpg"
       />
+      <p className="-mt-2 text-xs leading-relaxed text-charcoal/45">
+        Podés pegar un link de <strong className="font-medium text-charcoal/70">Google Drive</strong>.
+        El archivo debe estar compartido como{" "}
+        <strong className="font-medium text-charcoal/70">
+          “Cualquier persona con el enlace”
+        </strong>
+        . También sirve una URL directa (.jpg / .png / .webp).
+      </p>
 
       <div>
         <label
