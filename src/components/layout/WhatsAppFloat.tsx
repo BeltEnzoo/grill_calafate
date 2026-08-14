@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { brand } from "@/content/site";
+import { whatsappLink } from "@/content/site";
 import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 
 export function WhatsAppFloat() {
-  const href = `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(
+  const href = whatsappLink(
     "Hola Grill Calafate, me gustaría hacer una consulta.",
-  )}`;
+  );
 
   return (
     <Link

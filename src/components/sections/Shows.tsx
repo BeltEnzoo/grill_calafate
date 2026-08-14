@@ -135,7 +135,81 @@ export function Shows({ events, source = "fallback" }: ShowsProps) {
           </p>
         )}
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+        {/* Monthly schedules */}
+        <div className="mt-14 grid gap-8 md:grid-cols-3 md:gap-10">
+          {shows.schedules.map((schedule, i) => (
+            <Reveal key={schedule.month} delay={i * 0.08}>
+              <div className="h-full border-t border-cream/15 pt-6">
+                <p className="text-[11px] uppercase tracking-[0.3em] text-gold">
+                  0{i + 1}
+                </p>
+                <h3 className="mt-3 font-display text-3xl text-cream">
+                  {schedule.month}
+                </h3>
+
+                <div className="mt-6 space-y-4 text-sm leading-relaxed text-cream/60">
+                  {schedule.generalHours && (
+                    <p>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-cream/35">
+                        Horario general
+                      </span>
+                      <span className="mt-1 block text-cream/85">
+                        {schedule.generalHours}
+                      </span>
+                    </p>
+                  )}
+
+                  {schedule.shifts.length > 0 && (
+                    <div>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-cream/35">
+                        Turnos de cena
+                      </span>
+                      <ul className="mt-2 space-y-2">
+                        {schedule.shifts.map((shift) => (
+                          <li key={shift.name} className="text-cream/85">
+                            <span className="text-cream/50">{shift.name}:</span>{" "}
+                            {shift.hours}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {schedule.lastEntry && (
+                    <p>
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-cream/35">
+                        Último ingreso
+                      </span>
+                      <span className="mt-1 block text-cream/85">
+                        {schedule.lastEntry}
+                      </span>
+                    </p>
+                  )}
+
+                  <p className="border-t border-cream/10 pt-4">
+                    <span className="block text-[10px] uppercase tracking-[0.2em] text-gold/80">
+                      Show exclusivo
+                    </span>
+                    <span className="mt-1 block font-display text-xl text-cream">
+                      {schedule.showTime}
+                    </span>
+                    <span className="mt-1 block text-xs text-cream/40">
+                      {shows.showHint}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="mt-10">
+          <p className="max-w-3xl text-sm leading-relaxed text-cream/45 md:text-base">
+            {shows.note}
+          </p>
+        </Reveal>
+
+        <div className="mt-16 grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
           {/* Calendar grid */}
           <Reveal>
             <div className="rounded-sm bg-cream/[0.03] p-5 ring-1 ring-cream/10 md:p-8">
@@ -322,7 +396,7 @@ export function Shows({ events, source = "fallback" }: ShowsProps) {
                               </p>
                             ) : (
                               <div className="mt-5">
-                                <Button href="#contacto" variant="primary">
+                                <Button href="whatsapp" variant="primary">
                                   Reservar
                                 </Button>
                               </div>

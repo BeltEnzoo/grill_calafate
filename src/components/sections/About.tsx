@@ -4,7 +4,6 @@ import { about } from "@/content/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { MediaImage } from "@/components/ui/MediaImage";
-import { AnimatedCounter } from "@/components/ui/AnimatedCounter";
 
 export function About() {
   return (
@@ -52,6 +51,11 @@ export function About() {
                   <h3 className="mt-4 font-display text-3xl text-charcoal md:text-4xl">
                     {block.title}
                   </h3>
+                  {"highlight" in block && block.highlight && (
+                    <p className="mt-4 max-w-md font-display text-xl leading-snug text-earth md:text-2xl">
+                      {block.highlight}
+                    </p>
+                  )}
                   <p className="mt-5 max-w-md text-base leading-relaxed text-charcoal/65">
                     {block.text}
                   </p>
@@ -60,21 +64,6 @@ export function About() {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      {/* Stats band — distinctive element */}
-      <div className="relative mt-28 overflow-hidden bg-charcoal">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,200,87,0.12),_transparent_55%)]" />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-10 px-5 py-16 md:grid-cols-4 md:px-8 md:py-20">
-          {about.stats.map((stat) => (
-            <AnimatedCounter
-              key={stat.label}
-              value={stat.value}
-              suffix={stat.suffix}
-              label={stat.label}
-            />
-          ))}
         </div>
       </div>
     </section>

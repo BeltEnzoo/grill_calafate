@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { whatsappLink } from "@/content/site";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -23,6 +24,11 @@ const variants = {
   outline:
     "bg-transparent text-charcoal border border-charcoal/20 hover:border-earth hover:text-earth",
 };
+
+function resolveHref(href: string) {
+  if (href === "whatsapp") return whatsappLink();
+  return href;
+}
 
 export function Button({
   children,
@@ -52,9 +58,19 @@ export function Button({
   );
 
   if (href) {
+    const resolved = resolveHref(href);
+    const external = resolved.startsWith("http");
+
     return (
       <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
-        <Link href={href} className={classes} aria-label={ariaLabel}>
+        <Link
+          href={resolved}
+          className={classes}
+          aria-label={ariaLabel}
+          {...(external
+            ? { target: "_blank", rel: "noopener noreferrer" }
+            : {})}
+        >
           {inner}
         </Link>
       </motion.div>

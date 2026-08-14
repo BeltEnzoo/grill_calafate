@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { brand, navLinks } from "@/content/site";
+import { brand, navLinks, whatsappLink } from "@/content/site";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -85,7 +85,9 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="#contacto"
+            href={whatsappLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-sm bg-gold px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-charcoal transition hover:bg-cream"
             data-cursor="hover"
           >
@@ -129,6 +131,21 @@ export function Header() {
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.05 * navLinks.length }}
+              >
+                <Link
+                  href={whatsappLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="mt-4 inline-block rounded-sm bg-gold px-6 py-3 text-[11px] font-medium uppercase tracking-[0.2em] text-charcoal"
+                >
+                  Reservar
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}

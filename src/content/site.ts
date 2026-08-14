@@ -8,11 +8,14 @@ export const brand = {
   name: "Grill Calafate",
   tagline: "Experiencia Patagónica",
   location: "El Calafate, Santa Cruz, Argentina",
-  phone: "+54 9 2902 000000",
-  whatsapp: "5492902000000",
+  phone: "+54 2966 54-9790",
+  whatsapp: "542966549790",
   email: "info@grillcalafate.com",
   address: "El Calafate, Santa Cruz, Argentina",
-  hours: "Todos los días · 12:00 – 15:00 / 19:00 – 23:30",
+  hours: "Todos los días · Horarios según temporada (ver Shows)",
+  /** Mensaje prellenado al abrir WhatsApp desde “Reservar” */
+  whatsappReserveText:
+    "Hola! Quiero reservar una mesa en Rodizio Grill Calafate.",
   social: {
     instagram: "https://www.instagram.com/grillcalafate/",
     facebook: "https://www.facebook.com/grillcalafate",
@@ -27,12 +30,17 @@ export const brand = {
   },
 } as const;
 
+/** Link directo a WhatsApp (chat) con mensaje opcional */
+export function whatsappLink(text = brand.whatsappReserveText) {
+  return `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(text)}`;
+}
+
 export const navLinks = [
   { href: "#nosotros", label: "Nosotros" },
-  { href: "#restaurante", label: "Restaurante" },
+  { href: "#restaurante", label: "Menú" },
   { href: "#agencias", label: "Agencias" },
   { href: "#eventos", label: "Eventos" },
-  { href: "#shows", label: "Shows" },
+  { href: "#shows", label: "Horarios" },
   { href: "#galeria", label: "Galería" },
   { href: "#contacto", label: "Contacto" },
 ] as const;
@@ -41,57 +49,273 @@ export const hero = {
   title: "Viví la verdadera experiencia Patagónica.",
   subtitle:
     "Gastronomía premium, convenios con agencias de viajes y eventos exclusivos en El Calafate.",
-  primaryCta: { label: "Reservar Mesa", href: "#contacto" },
+  primaryCta: { label: "Reservar Mesa", href: "whatsapp" },
   secondaryCta: { label: "Conocer Más", href: "#nosotros" },
   /** Reemplazar: /public/images/hero.jpg o video en /public/videos/hero.mp4 */
-  image: "/images/hero.jpg",
+  image: "/images/hero-fire.jpg",
   video: "",
 };
 
 export const about = {
   eyebrow: "Sobre nosotros",
   title: "Donde el fuego, la hospitalidad y la celebración se encuentran.",
-  lead: "En Grill Calafate ofrecemos parrilla patagónica de alto nivel, convenios para agencias de viajes y un salón para momentos únicos.",
+  lead: "En Rodizio Grill Calafate ofrecemos espeto corrido patagónico de alto nivel: un sistema de cocción y un formato de servicio gastronómico muy popular en Brasil (conocido como rodízio).",
   blocks: [
     {
-      title: "Nuestra historia",
-      text: "Nacimos en El Calafate con una visión clara: honrar la magia de la Patagonia desde el primer corte en la parrilla hasta la última copa de la noche.",
-      image: "/images/about-1.jpg",
-      imageAlt: "Ambiente Grill Calafate — reemplazar imagen",
+      title: "Experiencia Rodizio Grill Calafate",
+      highlight: "Fuego patagónico en tu mesa. Buffet libre sin límites.",
+      text: "Cada detalle está pensado para quienes buscan excelencia: los mejores cortes de carne premium servidos al estilo rodizio y una completa propuesta de salad bar e isla de cocina ilimitada, directo a tu mesa.",
+      image: "/images/about-fuego.jpg",
+      imageAlt: "Fuego y brasas en Rodizio Grill Calafate",
     },
     {
-      title: "Experiencia",
-      text: "Cada detalle está pensado para quien busca calidad: sabores de autor, atención a grupos de agencias y un salón listo para celebrar con elegancia.",
-      image: "/images/about-2.jpg",
-      imageAlt: "Experiencia gastronómica — reemplazar imagen",
+      title: "Nuestro compromiso",
+      text: "Seleccionamos materias primas de primera calidad y contamos con un equipo apasionado que entiende la hospitalidad como un arte. Nos mueve la excelencia, la confianza y la autenticidad en cada encuentro alrededor del fuego.",
+      image: "/images/about-mesa.jpg",
+      imageAlt: "Mesa y hospitalidad Grill Calafate",
     },
-    {
-      title: "Compromiso",
-      text: "Trabajamos con productores locales y un equipo que vive la hospitalidad como un arte. Calidad, confianza y autenticidad en cada encuentro.",
-      image: "/images/about-3.jpg",
-      imageAlt: "Ambiente del restaurante — reemplazar imagen",
-    },
-  ],
-  stats: [
-    { value: 12, suffix: "+", label: "Años de experiencia" },
-    { value: 50, suffix: "k+", label: "Comensales felices" },
-    { value: 40, suffix: "+", label: "Agencias aliadas" },
-    { value: 200, suffix: "+", label: "Eventos realizados" },
   ],
 };
 
 export const restaurant = {
-  eyebrow: "Restaurante",
-  title: "El fuego como lenguaje.",
+  eyebrow: "Menú",
+  title: "Menú Rodizio Grill Calafate",
   description:
-    "Carnes premium, cordero patagónico, pastas artesanales, postres de autor y una cava de vinos seleccionados.",
-  cta: { label: "Ver Carta", href: "#contacto" },
-  highlights: [
-    { name: "Carnes", image: "/images/food-carnes.jpg" },
-    { name: "Cordero Patagónico", image: "/images/food-cordero.jpg" },
-    { name: "Pastas", image: "/images/food-pastas.jpg" },
-    { name: "Postres", image: "/images/food-postres.jpg" },
-    { name: "Vinos", image: "/images/food-vinos.jpg" },
+    "Una propuesta gastronómica diseñada para los amantes del buen comer: un recorrido libre y continuo por los mejores cortes a las brasas, acompañados por una selección fresca y artesanal en nuestras estaciones de buffet.",
+  cta: { label: "Reservar mesa", href: "whatsapp" },
+  chapters: [
+    {
+      id: "fuego",
+      title: "Fuego & Brasas",
+      intro:
+        "Nuestros maestros parrilleros llevan a tu mesa una secuencia ilimitada de carnes seleccionadas, trinchadas al momento sobre espadas y cocinadas a las brasas de carbón y leña.",
+      categories: [
+        {
+          name: "Vacuno Premium",
+          items: [
+            {
+              name: "Asado de Tira",
+              description: "El clásico infaltable y dorado en su punto justo.",
+            },
+            {
+              name: "Picanha",
+              description:
+                "La estrella del rodizio, con su capa perfecta de grasa crujiente.",
+            },
+            {
+              name: "Bife de Chorizo",
+              description:
+                "Corte emblemático de intenso sabor y ternura.",
+            },
+            {
+              name: "Ojo de Bife",
+              description:
+                "Veteado perfecto que garantiza máxima jugosidad.",
+            },
+            {
+              name: "Colita de Cuadril",
+              description: "Magra, tierna y sazonada a la perfección.",
+            },
+            {
+              name: "Entraña",
+              description:
+                "Dorada por fuera, jugosa por dentro y llena de carácter.",
+            },
+            {
+              name: "Lomo",
+              description:
+                "La máxima expresión de suavidad y delicadeza.",
+            },
+          ],
+        },
+        {
+          name: "Cerdo Especial",
+          items: [
+            {
+              name: "Bondiola",
+              description:
+                "Tierna, bien sazonada y lentamente caramelizada.",
+            },
+            {
+              name: "Ribs de Cerdo a la Barbacoa",
+              description:
+                "Costillas tiernas glaseadas en salsa barbacoa artesanal.",
+            },
+            {
+              name: "Matambrito de Cerdo",
+              description:
+                "Crocante por fuera, tierno por dentro y con un toque de limón.",
+            },
+          ],
+        },
+        {
+          name: "Aves Seleccionadas",
+          items: [
+            {
+              name: "Pata Muslo Deshuesada",
+              description:
+                "Tierna e impregnada del humo característico de la parrilla.",
+            },
+            {
+              name: "Brochette de Pollo",
+              description:
+                "Cubos marinados intercalados con vegetales de estación.",
+            },
+            {
+              name: "Alitas Crocantes",
+              description: "Dorado perfecto y sabor intenso.",
+            },
+            {
+              name: "Patitas de Pollo",
+              description:
+                "Preparación clásica pensada para el disfrute de toda la familia.",
+            },
+          ],
+        },
+        {
+          name: "Especialidades Patagónicas",
+          items: [
+            {
+              name: "Cordero a la Estaca",
+              description:
+                "Símbolo de nuestra tierra, cocinado lentamente al fuego directo.",
+            },
+            {
+              name: "Lomo de Guanaco",
+              description:
+                "Corte autóctono de caza, magro, de sabor único y textura suave.",
+            },
+          ],
+        },
+        {
+          name: "Achuras & Embutidos",
+          items: [
+            {
+              name: "Mollejas",
+              description:
+                "Crocantes por fuera y de textura cremosa por dentro.",
+            },
+            {
+              name: "Chorizos",
+              description: "Puro cerdo.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "recepcion",
+      title: "Recepción a la Mesa",
+      intro:
+        "Para dar la bienvenida a tu experiencia, servimos directamente en tu mesa una selección de clásicos bien calientes.",
+      categories: [
+        {
+          name: "",
+          items: [
+            {
+              name: "Empanadas Criollas",
+              description:
+                "Rellenas de carne cortada a cuchillo y auténtico cordero patagónico.",
+            },
+            {
+              name: "Provoleta a las Brasas",
+              description:
+                "Queso provoleta dorado al fuego, crocante por fuera y fundido en el corazón.",
+            },
+            {
+              name: "Escabeche de Berenjenas",
+              description: "Elaboración artesanal de la casa.",
+            },
+            {
+              name: "Papas Fritas Crocantes",
+              description: "Recién hechas, doradas y livianas.",
+            },
+            {
+              name: "Panera Artesanal",
+              description: "Variedad de panes horneados diariamente.",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "salad-bar",
+      title: "Salad Bar & Estaciones Libres",
+      intro:
+        "Un recorrido autoservicio diseñado para complementar y refrescar cada bocado de carne.",
+      categories: [
+        {
+          name: "Ensaladas Especiales & Frescas",
+          items: [
+            {
+              name: "Caprese",
+              description:
+                "Tomates frescos, mozzarella fiordilatte y albahaca natural.",
+            },
+            {
+              name: "Mediterránea",
+              description:
+                "Vegetales frescos, olivas y un toque de aceite de oliva virgen extra.",
+            },
+            {
+              name: "Rúcula & Parmesano",
+              description:
+                "Hojas de rúcula fresca con láminas de queso parmesano madurado.",
+            },
+            {
+              name: "Verduras Asadas",
+              description:
+                "Vegetales de estación caramelizados al horno de barro.",
+            },
+            {
+              name: "Cous Cous Patagónico",
+              description:
+                "Esponjoso cous cous hidratado con vegetales y finas hierbas.",
+            },
+            {
+              name: "Judías Verdes & Papas",
+              description:
+                "Combinación fresca y crocante sazonada a las hierbas.",
+            },
+            {
+              name: "Ensalada Alemana",
+              description:
+                "Salchichas seleccionadas, papas y aderezo suave de mostaza.",
+            },
+            {
+              name: "Rusa Tradicional",
+              description:
+                "Papas, zanahorias y arvejas con mayonesa casera.",
+            },
+            {
+              name: "Opciones Clásicas",
+              description:
+                "Mix de hojas verdes, ensalada mixta, ensalada de pepino y papa, ensalada de papa, huevo y verdeo, ensalada de legumbres y combinación de palmitos con tomates cherry.",
+            },
+          ],
+        },
+        {
+          name: "Charcutería & Quesos",
+          items: [
+            {
+              name: "Estación de Fiambres",
+              description:
+                "Selección de fiambres artesanales, curados y embutidos de calidad premium.",
+            },
+            {
+              name: "Estación de Quesos",
+              description:
+                "Variedad de quesos duros, semiduros y suaves de elaboración regional.",
+            },
+            {
+              name: "Estación de Frutas Frescas",
+              description:
+                "Frutas de estación seleccionadas y cortadas al momento para aportar frescura y balance.",
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
 
@@ -101,7 +325,7 @@ export const agencies = {
   title: "Traé a tus viajeros. Nosotros los recibimos.",
   description:
     "Trabajamos con agencias de El Calafate y de todo el país: ustedes traen a sus clientes al restaurante y acceden a condiciones preferenciales.",
-  image: "/images/salon-eventos.jpg",
+  image: "/images/agencias-ambiente.jpg",
   steps: [
     {
       step: "01",
@@ -152,27 +376,27 @@ export const events = {
   title: "Celebrá con la Patagonia de fondo.",
   description:
     "Un espacio versátil y elegante para casamientos, cumpleaños, empresas y encuentros privados.",
-  image: "/images/salon-eventos.jpg",
+  image: "/images/eventos-ambiente.jpg",
   types: [
     {
       name: "Casamientos",
       description: "Bodas íntimas o grandes celebraciones con servicio integral.",
-      image: "/images/event-casamientos.jpg",
+      image: "/images/galeria-copas.jpg",
     },
     {
       name: "Cumpleaños",
       description: "Fiestas memorables con gastronomía y ambientación a medida.",
-      image: "/images/event-cumpleanos.jpg",
+      image: "/images/galeria-vino-1.jpg",
     },
     {
       name: "Empresas",
       description: "Convenciones, incentives y cenas corporativas de alto nivel.",
-      image: "/images/event-empresas.jpg",
+      image: "/images/galeria-fuego-1.jpg",
     },
     {
       name: "Eventos privados",
       description: "Encuentros exclusivos con la atención que merecés.",
-      image: "/images/event-privados.jpg",
+      image: "/images/galeria-vino-2.jpg",
     },
   ],
   cta: { label: "Consultar disponibilidad", href: "#contacto" },
@@ -188,10 +412,42 @@ export type { ShowStatus } from "@/lib/shows";
 export { default as showsEvents } from "./shows.json";
 
 export const shows = {
-  eyebrow: "Calendario de shows",
-  title: "Noches que se sienten.",
+  eyebrow: "Horarios & Shows",
+  title: "Horarios & Shows Exclusivos",
   description:
-    "Música en vivo, encuentros y experiencias especiales. Explorá el mes y elegí tu noche.",
+    "Atendemos todos los días (lunes a lunes) para ofrecerte la experiencia completa de rodizio y buffet libre.",
+  schedules: [
+    {
+      month: "Septiembre",
+      generalHours: "18:00 a 00:00 hs",
+      lastEntry: "23 hs",
+      shifts: [],
+      showTime: "22:30 hs",
+    },
+    {
+      month: "Octubre",
+      generalHours: "",
+      lastEntry: "22:30 hs",
+      shifts: [
+        { name: "Primer turno", hours: "17:30 a 20:00 hs" },
+        { name: "Segundo turno", hours: "20:30 a 00:00 hs" },
+      ],
+      showTime: "22:30 hs",
+    },
+    {
+      month: "Noviembre",
+      generalHours: "",
+      lastEntry: "",
+      shifts: [
+        { name: "Turno Temprano", hours: "17:30 a 19:30 hs" },
+        { name: "Turno Central", hours: "20:00 a 22:00 hs" },
+        { name: "Turno Cierre", hours: "22:30 a 00:30 hs" },
+      ],
+      showTime: "23:00 hs",
+    },
+  ],
+  showHint: "Consultar fechas en el calendario",
+  note: "Para disfrutar de la experiencia gastronómica junto a nuestros shows exclusivos, te recomendamos realizar tu reserva previa seleccionando el día correspondiente en el calendario de eventos.",
 };
 
 export const testimonials = [
@@ -219,19 +475,19 @@ export const testimonials = [
 ];
 
 export const gallery = [
-  { src: "/images/galeria-parrilla.jpg", alt: "Parrilla y carne a la brasa", span: "wide" as const },
-  { src: "/images/galeria-corte.jpg", alt: "Corte premium a la parrilla", span: "tall" as const },
-  { src: "/images/food-vinos.jpg", alt: "Selección de vinos", span: "normal" as const },
-  { src: "/images/salon-eventos.jpg", alt: "Salón de eventos", span: "normal" as const },
-  { src: "/images/food-pastas.jpg", alt: "Pastas de la casa", span: "wide" as const },
-  { src: "/images/event-privados.jpg", alt: "Mesa para eventos", span: "normal" as const },
+  { src: "/images/galeria-fuego-1.jpg", alt: "Fuego y brasas", span: "wide" as const },
+  { src: "/images/galeria-copas.jpg", alt: "Mesa preparada", span: "tall" as const },
+  { src: "/images/galeria-vino-1.jpg", alt: "Copa de vino", span: "normal" as const },
+  { src: "/images/galeria-brasas.jpg", alt: "Brasas en la parrilla", span: "normal" as const },
+  { src: "/images/galeria-fuego-2.jpg", alt: "Chispas del fuego", span: "wide" as const },
+  { src: "/images/galeria-vino-2.jpg", alt: "Vino tinto en la mesa", span: "normal" as const },
 ];
 
 export const instagramFeed = [
-  { src: "/images/ig-1.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/ig-2.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/ig-3.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/ig-4.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/ig-5.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/ig-6.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-fuego-2.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-copas.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-vino-1.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-brasas.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-vino-2.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-fuego-1.jpg", href: "https://www.instagram.com/grillcalafate/" },
 ];

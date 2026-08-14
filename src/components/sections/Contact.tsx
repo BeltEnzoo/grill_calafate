@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
-import { brand } from "@/content/site";
+import { brand, whatsappLink } from "@/content/site";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
@@ -129,7 +129,7 @@ export function Contact() {
                   <FacebookIcon className="h-5 w-5" />
                 </a>
                 <a
-                  href={`https://wa.me/${brand.whatsapp}`}
+                  href={whatsappLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex h-11 items-center rounded-full border border-charcoal/10 px-5 text-[11px] uppercase tracking-[0.2em] text-charcoal transition hover:border-earth hover:text-earth"
