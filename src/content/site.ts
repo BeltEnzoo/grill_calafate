@@ -31,8 +31,10 @@ export const brand = {
 } as const;
 
 /** Link directo a WhatsApp (chat) con mensaje opcional */
-export function whatsappLink(text = brand.whatsappReserveText) {
-  return `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(text)}`;
+export function whatsappLink(text?: string) {
+  return `https://wa.me/${brand.whatsapp}?text=${encodeURIComponent(
+    text ?? brand.whatsappReserveText,
+  )}`;
 }
 
 export const navLinks = [
