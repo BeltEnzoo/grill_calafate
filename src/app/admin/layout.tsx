@@ -17,7 +17,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
           <div>
             <Link href="/admin" className="font-display text-xl">
-              Grill <span className="text-gold">Calafate</span>
+              Rodizio Grill <span className="text-gold">Calafate</span>
             </Link>
             <p className="text-[10px] uppercase tracking-[0.25em] text-cream/45">
               Panel de shows

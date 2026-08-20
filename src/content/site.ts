@@ -5,7 +5,7 @@
  */
 
 export const brand = {
-  name: "Grill Calafate",
+  name: "Rodizio Grill Calafate",
   tagline: "Experiencia Patagónica",
   location: "El Calafate, Santa Cruz, Argentina",
   phone: "+54 2966 54-9790",

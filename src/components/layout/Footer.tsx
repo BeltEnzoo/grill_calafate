@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { brand, navLinks } from "@/content/site";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 
 export function Footer() {
@@ -11,9 +12,7 @@ export function Footer() {
       <div className="patagonia-grain pointer-events-none absolute inset-0 opacity-20" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-3 md:px-8 md:py-20">
         <div>
-          <p className="font-display text-2xl">
-            Grill <span className="text-gold">Calafate</span>
-          </p>
+          <BrandMark size="md" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-cream/55">
             Restaurante, convenios con agencias de viajes y salón de eventos en
             el corazón de la Patagonia.

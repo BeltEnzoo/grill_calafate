@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 export function PageLoader() {
   const [visible, setVisible] = useState(true);
@@ -27,9 +28,7 @@ export function PageLoader() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <p className="font-display text-3xl tracking-wide text-cream md:text-4xl">
-                Grill <span className="text-gold">Calafate</span>
-              </p>
+              <BrandMark size="lg" />
               <motion.div
                 className="mx-auto mt-6 h-px w-24 origin-left bg-gold"
                 initial={{ scaleX: 0 }}

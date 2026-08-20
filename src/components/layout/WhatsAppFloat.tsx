@@ -6,7 +6,7 @@ import { WhatsAppIcon } from "@/components/ui/SocialIcons";
 
 export function WhatsAppFloat() {
   const href = whatsappLink(
-    "Hola Grill Calafate, me gustaría hacer una consulta.",
+    "Hola Rodizio Grill Calafate, me gustaría hacer una consulta.",
   );
 
   return (

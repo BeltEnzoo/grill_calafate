@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { brand, navLinks, whatsappLink } from "@/content/site";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { cn } from "@/lib/utils";
 
 export function Header() {
@@ -62,12 +63,7 @@ export function Header() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8">
         <Link href="#inicio" className="group relative z-50" data-cursor="hover">
-          <span className="font-display text-xl tracking-wide text-cream md:text-2xl">
-            Grill{" "}
-            <span className="text-gold transition group-hover:text-cream">
-              Calafate
-            </span>
-          </span>
+          <BrandMark showHover />
           <span className="mt-0.5 block text-[9px] uppercase tracking-[0.35em] text-cream/45">
             {brand.tagline}
           </span>

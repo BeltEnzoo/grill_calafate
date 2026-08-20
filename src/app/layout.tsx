@@ -21,43 +21,45 @@ const siteUrl = "https://grillcalafate.com";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Grill Calafate | Experiencia Patagónica Premium",
-    template: "%s | Grill Calafate",
+    default: "Rodizio Grill Calafate | Experiencia Patagónica Premium",
+    template: "%s | Rodizio Grill Calafate",
   },
   description:
     "Restaurante, convenios con agencias de viajes y salón de eventos en El Calafate. Gastronomía premium y celebraciones exclusivas.",
   keywords: [
+    "Rodizio Grill Calafate",
     "Grill Calafate",
     "restaurante El Calafate",
     "parrilla Patagonia",
+    "rodizio El Calafate",
     "convenio agencias turismo",
     "salón de eventos",
     "cordero patagónico",
     "asado El Calafate",
   ],
-  authors: [{ name: "Grill Calafate" }],
+  authors: [{ name: "Rodizio Grill Calafate" }],
   openGraph: {
     type: "website",
     locale: "es_AR",
     url: siteUrl,
-    siteName: "Grill Calafate",
-    title: "Grill Calafate | Experiencia Patagónica Premium",
+    siteName: "Rodizio Grill Calafate",
+    title: "Rodizio Grill Calafate | Experiencia Patagónica Premium",
     description:
       "Viví la verdadera experiencia Patagónica. Restaurante, agencias y eventos en El Calafate.",
     images: [
       {
-        url: "/images/hero.jpg",
+        url: "/images/hero-fire.jpg",
         width: 1200,
         height: 630,
-        alt: "Grill Calafate — El Calafate, Patagonia",
+        alt: "Rodizio Grill Calafate — El Calafate, Patagonia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grill Calafate | Experiencia Patagónica Premium",
+    title: "Rodizio Grill Calafate | Experiencia Patagónica Premium",
     description: "Gastronomía premium y eventos exclusivos en El Calafate.",
-    images: ["/images/hero.jpg"],
+    images: ["/images/hero-fire.jpg"],
   },
   robots: {
     index: true,
