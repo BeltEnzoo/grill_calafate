@@ -42,7 +42,7 @@ export const navLinks = [
   { href: "#restaurante", label: "Menú" },
   { href: "#agencias", label: "Agencias" },
   { href: "#eventos", label: "Eventos" },
-  { href: "#shows", label: "Horarios" },
+  { href: "#shows", label: "Horarios/Shows" },
   { href: "#galeria", label: "Galería" },
   { href: "#contacto", label: "Contacto" },
 ] as const;

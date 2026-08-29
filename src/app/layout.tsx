@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+const GOOGLE_ADS_ID = "AW-18362860471";
 
 const display = Cormorant_Garamond({
   subsets: ["latin"],
@@ -83,7 +86,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={`${display.variable} ${sans.variable}`}>
-      <body className="bg-cream font-sans antialiased">{children}</body>
+      <body className="bg-cream font-sans antialiased">
+        {children}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ADS_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GOOGLE_ADS_ID}');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
