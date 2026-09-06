@@ -44,6 +44,8 @@ next-env.d.ts
 AGENTS.md
 CLAUDE.md
 
+# staging photos from client (copied into public/images/)
+/public/images/nuevas/
 
 !.env.example
 

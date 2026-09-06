@@ -17,7 +17,7 @@ export const brand = {
   whatsappReserveText:
     "Hola! Quiero reservar una mesa en Rodizio Grill Calafate.",
   social: {
-    instagram: "https://www.instagram.com/grillcalafate/",
+    instagram: "https://www.instagram.com/rodiziogrillcalafate/",
     facebook: "https://www.facebook.com/grillcalafate",
   },
   /** Paleta oficial (Manual de Identidad) */
@@ -68,13 +68,13 @@ export const about = {
       highlight: "Fuego patagónico en tu mesa. Buffet libre sin límites.",
       text: "Cada detalle está pensado para quienes buscan excelencia: los mejores cortes de carne premium servidos al estilo rodizio y una completa propuesta de salad bar e isla de cocina ilimitada, directo a tu mesa.",
       image: "/images/about-fuego.jpg",
-      imageAlt: "Fuego y brasas en Rodizio Grill Calafate",
+      imageAlt: "Espetos de carne a las brasas en Rodizio Grill Calafate",
     },
     {
       title: "Nuestro compromiso",
       text: "Seleccionamos materias primas de primera calidad y contamos con un equipo apasionado que entiende la hospitalidad como un arte. Nos mueve la excelencia, la confianza y la autenticidad en cada encuentro alrededor del fuego.",
       image: "/images/about-mesa.jpg",
-      imageAlt: "Mesa y hospitalidad Grill Calafate",
+      imageAlt: "Estación de fiambres, quesos y frutas del buffet",
     },
   ],
 };
@@ -316,6 +316,16 @@ export const restaurant = {
             },
           ],
         },
+        {
+          name: "Sushi",
+          items: [
+            {
+              name: "Estación de Sushi Fresco",
+              description:
+                "Rolls y piezas elaboradas al momento, con pescados frescos, vegetales y acompañamientos clásicos.",
+            },
+          ],
+        },
       ],
     },
   ],
@@ -477,19 +487,19 @@ export const testimonials = [
 ];
 
 export const gallery = [
-  { src: "/images/galeria-fuego-1.jpg", alt: "Fuego y brasas", span: "wide" as const },
-  { src: "/images/galeria-copas.jpg", alt: "Mesa preparada", span: "tall" as const },
-  { src: "/images/galeria-vino-1.jpg", alt: "Copa de vino", span: "normal" as const },
-  { src: "/images/galeria-brasas.jpg", alt: "Brasas en la parrilla", span: "normal" as const },
-  { src: "/images/galeria-fuego-2.jpg", alt: "Chispas del fuego", span: "wide" as const },
-  { src: "/images/galeria-vino-2.jpg", alt: "Vino tinto en la mesa", span: "normal" as const },
+  { src: "/images/galeria-fuego-1.jpg", alt: "Parrilla rodizio con carnes y vegetales", span: "wide" as const },
+  { src: "/images/galeria-copas.jpg", alt: "Rolls de salmón y palta", span: "tall" as const },
+  { src: "/images/galeria-vino-1.jpg", alt: "Selección de sushi en pizarra", span: "normal" as const },
+  { src: "/images/galeria-brasas.jpg", alt: "Salad bar con ensaladas frescas", span: "normal" as const },
+  { src: "/images/galeria-fuego-2.jpg", alt: "Buffet libre de entradas y ensaladas", span: "wide" as const },
+  { src: "/images/galeria-vino-2.jpg", alt: "Salón principal Rodizio Grill Calafate", span: "normal" as const },
 ];
 
 export const instagramFeed = [
-  { src: "/images/galeria-fuego-2.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/galeria-copas.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/galeria-vino-1.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/galeria-brasas.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/galeria-vino-2.jpg", href: "https://www.instagram.com/grillcalafate/" },
-  { src: "/images/galeria-fuego-1.jpg", href: "https://www.instagram.com/grillcalafate/" },
+  { src: "/images/galeria-fuego-2.jpg", href: "https://www.instagram.com/rodiziogrillcalafate/" },
+  { src: "/images/galeria-copas.jpg", href: "https://www.instagram.com/rodiziogrillcalafate/" },
+  { src: "/images/galeria-vino-1.jpg", href: "https://www.instagram.com/rodiziogrillcalafate/" },
+  { src: "/images/galeria-brasas.jpg", href: "https://www.instagram.com/rodiziogrillcalafate/" },
+  { src: "/images/galeria-vino-2.jpg", href: "https://www.instagram.com/rodiziogrillcalafate/" },
+  { src: "/images/galeria-fuego-1.jpg", href: "https://www.instagram.com/rodiziogrillcalafate/" },
 ];
