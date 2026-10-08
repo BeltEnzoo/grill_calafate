@@ -24,6 +24,8 @@
 }
 
 html {
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
   scroll-behavior: smooth;
   overflow-x: hidden;
   overflow-y: auto;
