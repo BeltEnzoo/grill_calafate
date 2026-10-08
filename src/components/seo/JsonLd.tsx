@@ -19,7 +19,7 @@ export function JsonLd() {
     servesCuisine: ["Parrilla Argentina", "Patagónica", "Carnes"],
     priceRange: "$$$",
     acceptsReservations: true,
-    openingHours: "Mo-Su 12:00-15:00,19:00-23:30",
+    openingHours: "Mo-Su 12:00-15:00,18:00-00:00",
     sameAs: [brand.social.instagram, brand.social.facebook],
   };
 

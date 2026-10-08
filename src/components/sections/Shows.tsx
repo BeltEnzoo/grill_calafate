@@ -146,14 +146,19 @@ export function Shows({ events, source = "fallback" }: ShowsProps) {
                 <h3 className="mt-3 font-display text-3xl text-cream">
                   {schedule.month}
                 </h3>
+                {schedule.detail && (
+                  <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-cream/40">
+                    {schedule.detail}
+                  </p>
+                )}
 
                 <div className="mt-6 space-y-4 text-sm leading-relaxed text-cream/60">
                   {schedule.generalHours && (
                     <p>
                       <span className="block text-[10px] uppercase tracking-[0.2em] text-cream/35">
-                        Horario general
+                        Horario
                       </span>
-                      <span className="mt-1 block text-cream/85">
+                      <span className="mt-1 block font-display text-2xl text-cream">
                         {schedule.generalHours}
                       </span>
                     </p>
@@ -161,9 +166,11 @@ export function Shows({ events, source = "fallback" }: ShowsProps) {
 
                   {schedule.shifts.length > 0 && (
                     <div>
-                      <span className="block text-[10px] uppercase tracking-[0.2em] text-cream/35">
-                        Turnos de cena
-                      </span>
+                      {schedule.shiftsLabel && (
+                        <span className="block text-[10px] uppercase tracking-[0.2em] text-cream/35">
+                          {schedule.shiftsLabel}
+                        </span>
+                      )}
                       <ul className="mt-2 space-y-2">
                         {schedule.shifts.map((shift) => (
                           <li key={shift.name} className="text-cream/85">
@@ -186,17 +193,19 @@ export function Shows({ events, source = "fallback" }: ShowsProps) {
                     </p>
                   )}
 
-                  <p className="border-t border-cream/10 pt-4">
-                    <span className="block text-[10px] uppercase tracking-[0.2em] text-gold/80">
-                      Show exclusivo
-                    </span>
-                    <span className="mt-1 block font-display text-xl text-cream">
-                      {schedule.showTime}
-                    </span>
-                    <span className="mt-1 block text-xs text-cream/40">
-                      {shows.showHint}
-                    </span>
-                  </p>
+                  {schedule.showTime && (
+                    <p className="border-t border-cream/10 pt-4">
+                      <span className="block text-[10px] uppercase tracking-[0.2em] text-gold/80">
+                        Show exclusivo
+                      </span>
+                      <span className="mt-1 block font-display text-xl text-cream">
+                        {schedule.showTime}
+                      </span>
+                      <span className="mt-1 block text-xs text-cream/40">
+                        {shows.showHint}
+                      </span>
+                    </p>
+                  )}
                 </div>
               </div>
             </Reveal>

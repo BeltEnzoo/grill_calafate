@@ -12,7 +12,7 @@ export const brand = {
   whatsapp: "542966549790",
   email: "info@grillcalafate.com",
   address: "El Calafate, Santa Cruz, Argentina",
-  hours: "Todos los días · Horarios según temporada (ver Shows)",
+  hours: "Todos los días · Mediodía 12:00–15:00 · Noche 18:00–00:00",
   /** Mensaje prellenado al abrir WhatsApp desde “Reservar” */
   whatsappReserveText:
     "Hola! Quiero reservar una mesa en Rodizio Grill Calafate.",
@@ -425,41 +425,43 @@ export { default as showsEvents } from "./shows.json";
 
 export const shows = {
   eyebrow: "Horarios & Shows",
-  title: "Horarios & Shows Exclusivos",
+  title: "Horarios & Shows en vivo",
   description:
-    "Atendemos todos los días (lunes a lunes) para ofrecerte la experiencia completa de rodizio y buffet libre.",
+    "A partir del 6 de octubre atendemos todos los días: mediodía y noche, con folklore en vivo.",
   schedules: [
     {
-      month: "Septiembre",
+      month: "Mediodía",
+      detail: "Todos los días",
+      generalHours: "12:00 a 15:00 hs",
+      lastEntry: "",
+      shifts: [] as { name: string; hours: string }[],
+      shiftsLabel: "",
+      showTime: "",
+    },
+    {
+      month: "Noche",
+      detail: "Todos los días",
       generalHours: "18:00 a 00:00 hs",
-      lastEntry: "23 hs",
-      shifts: [],
-      showTime: "22:30 hs",
+      lastEntry: "",
+      shifts: [] as { name: string; hours: string }[],
+      shiftsLabel: "",
+      showTime: "",
     },
     {
-      month: "Octubre",
-      generalHours: "",
-      lastEntry: "22:30 hs",
-      shifts: [
-        { name: "Primer turno", hours: "17:30 a 20:00 hs" },
-        { name: "Segundo turno", hours: "20:30 a 00:00 hs" },
-      ],
-      showTime: "22:30 hs",
-    },
-    {
-      month: "Noviembre",
+      month: "Shows en vivo",
+      detail: "Folklore · todos los días",
       generalHours: "",
       lastEntry: "",
       shifts: [
-        { name: "Turno Temprano", hours: "17:30 a 19:30 hs" },
-        { name: "Turno Central", hours: "20:00 a 22:00 hs" },
-        { name: "Turno Cierre", hours: "22:30 a 00:30 hs" },
+        { name: "Primer show", hours: "19:00 a 20:00 hs" },
+        { name: "Segundo show", hours: "21:00 a 22:00 hs" },
       ],
-      showTime: "23:00 hs",
+      shiftsLabel: "Folklore",
+      showTime: "",
     },
   ],
-  showHint: "Consultar fechas en el calendario",
-  note: "Para disfrutar de la experiencia gastronómica junto a nuestros shows exclusivos, te recomendamos realizar tu reserva previa seleccionando el día correspondiente en el calendario de eventos.",
+  showHint: "Todos los días",
+  note: "Para disfrutar de la experiencia gastronómica junto a nuestros shows en vivo, te recomendamos realizar tu reserva previa.",
 };
 
 export const testimonials = [
