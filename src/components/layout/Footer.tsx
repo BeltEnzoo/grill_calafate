@@ -87,6 +87,17 @@ export function Footer() {
           <p>
             © {year} {brand.name}. Todos los derechos reservados.
           </p>
+          <p>
+            Sitio creado por{" "}
+            <a
+              href="https://www.kodeonsoluciones.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline-offset-2 transition hover:text-gold hover:underline"
+            >
+              Kodeon Soluciones
+            </a>
+          </p>
           <p>El Calafate · Santa Cruz · Argentina</p>
         </div>
       </div>
